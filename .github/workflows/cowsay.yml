@@ -1,5 +1,5 @@
 ---
-    name: Cowsay variables debug
+    name: Cowsay variables test
     
     on:
       workflow_dispatch:
@@ -16,7 +16,7 @@
           - name: Copy index.html & create cowsay.txt
             run: |
               cp cowsay/index.html /var/www/html/
-              echo $COWSAY_MSG" > /var/www/html/cowsay.txt
+              echo "$COWSAY_MSG" > /var/www/html/cowsay.txt
                 env:
                 COWSAY_MSG: ${{ vars.COWSAY_MESSAGE }}
  
