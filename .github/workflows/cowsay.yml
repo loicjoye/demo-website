@@ -17,8 +17,6 @@
             run: |
               cp cowsay/index.html /var/www/html/
               echo "$COWSAY_MSG" > /var/www/html/cowsay.txt
-                env:
-                COWSAY_MSG: ${{ vars.COWSAY_MESSAGE }}
- 
-                
-                
+            env:
+              COWSAY_MSG: ${{ vars.COWSAY_MESSAGE }}
+                         
