@@ -19,4 +19,7 @@
               echo "$COWSAY_MSG" > /var/www/html/cowsay.txt
             env:
               COWSAY_MSG: ${{ vars.COWSAY_MESSAGE }}
-                         
+
+              echo "$COWSAY_SECRET_MSG" > /var/www/html/cowsay_secret.txt
+            env:
+              COWSAY_SECRET_MSG: ${{ secrets.COWSAY_SECRET_MSG }}
