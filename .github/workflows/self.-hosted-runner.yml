@@ -1,5 +1,5 @@
 ---
-    name: Upload vers selt hosted runner
+    name: Upload vers self hosted runner
     
     on:
       workflow_dispatch:

@@ -1,0 +1,24 @@
+---
+    name: Cowsay variables debug
+    
+    on:
+      workflow_dispatch:
+      push:
+        branches:
+          - cowsay
+    
+    jobs:
+      cowsay:
+        runs-on: self-hosted
+
+        steps:
+          - uses: actions/checkout@v4
+          - name: Copy index.html & create cowsay.txt
+            run: |
+              cp cowsay/index.html /var/www/html/
+              echo $COWSAY_MSG" > /var/www/html/cowsay.txt
+                env:
+                COWSAY_MSG: ${{ vars.COWSAY_MESSAGE }}
+ 
+                
+                
