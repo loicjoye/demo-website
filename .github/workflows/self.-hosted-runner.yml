@@ -17,7 +17,7 @@
           - name: test env and deploy a sample html file
             run: |
               cp index.html /var/www/html/ 
-              cp /assets /var/www/html/
-              cp /images /var/www/html/
+              cp -r assets /var/www/html/
+              cp -r images /var/www/html/
     
     
