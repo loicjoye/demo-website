@@ -1,5 +1,5 @@
 ---
-    name: Upload vers github pages
+    name: Upload vers selt hosted runner
     
     on:
       workflow_dispatch:
@@ -10,7 +10,7 @@
     jobs:
       # Build job
       deploy:
-        runs-on: [self-hosted, linux, ARM64]
+        runs-on: self-hosted
 
         steps:
           - uses: actions/checkout@v4
