@@ -30,4 +30,4 @@ jobs:
       with:
         context: "{{defaultContext}}:docker_build"
         push: true
-        tags: loic_79/matrix-term:1
+        tags: loic79/matrix-term:1
