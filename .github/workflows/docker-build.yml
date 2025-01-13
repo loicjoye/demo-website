@@ -1,7 +1,7 @@
 ---
 
 
-name: Docker Build & Push image
+name: Docker Build & Push image with tag
 
 on:
   workflow_dispatch:
