@@ -18,6 +18,9 @@ jobs:
 
     steps:
 
+    - name: Checkout
+      uses: actions/checkout@v4
+
     - name: Docker meta
       id: meta
       uses: docker/metadata-action@v5
@@ -39,6 +42,6 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         context: "{{defaultContext}}:docker_build"
-        push: true
+        push: ${{ github.event_name != 'push tag' }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
