@@ -7,11 +7,6 @@ on:
   workflow_dispatch:
   push:
     branches: docker-build
-    tags: |
-      type=ref,event=branch
-      type=ref,event=pr
-      type=semver,pattern={{version}}
-      type=semver,pattern={{major}}.{{minor}}
 
 env:
   REGISTRY: docker.io
@@ -28,6 +23,11 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
       
     - name: Login to Docker Hub
       uses: docker/login-action@v3
